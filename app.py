@@ -269,6 +269,3 @@ async def otp():
         return await render_page(f"<h2> 💢Server error </h2><p>{e}</p>")
 
     return await render_page("<h2>✅ Verified</h2>")
-
-if __name__ == '__main__':
-    app.run()
